@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         alignSelf:'center',
         paddingTop:30,
-        color:'black',
+        color:"black",
         fontFamily:'monospace',
 
 
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
 
       },
       parent:{
-    
+    // backgroundColor:'lightgrey',
+    height:'100%'
       }
 })

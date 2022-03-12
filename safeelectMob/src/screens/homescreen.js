@@ -1,58 +1,42 @@
-import { StyleSheet, Text, View, ScrollView, Button } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
+import ProfileCard from '../components/profileCard'
+import CustomButton from '../components/customButton'
 
 const Homescreen = () => {
   return (
- 
-  
+
     <View style={styles.parentcnt}>
       <Text style={styles.text} >
         Results
       </Text>
-    
-      <ScrollView style={{height:'90%'}} >
-      <View style={{backgroundColor:'#DAF7A6', height:250, maxWidth:250, borderRadius:10, marginLeft:50, marginVertical:25 }}> 
-      </View>
- 
-      <View style={{backgroundColor:'#D3D3D3', height:250, maxWidth:250, borderRadius:10, marginLeft:50, marginVertical:25 }}> 
-      </View>
- 
-      <View style={{backgroundColor:'red', height:250, maxWidth:250, borderRadius:10, marginLeft:50, marginVertical:25 }}> 
-      </View>
- 
-      <View style={{backgroundColor:'red', height:250, maxWidth:250, borderRadius:10, marginLeft:50, marginVertical:25 }}> 
-      </View>
- 
-      <View style={{backgroundColor:'red', height:250, maxWidth:250, borderRadius:10, marginLeft:50, marginVertical:25 }}> 
-      </View>
- 
+      <ScrollView style={{ height: '90%' }} >
+        <ProfileCard name="Syed Abdulolah"  position="President" rank="1" votes="2000" percentageVote="30%" uri='https://i.ibb.co/QJNgCgh/w1.jpg' />
+
+        <CustomButton title='Analytics'/>
       </ScrollView>
-    
-      </View>
-     
-   
+    </View>
+
   )
 }
 
 
-
 const styles = StyleSheet.create({
-    sectionContainer: {
-      marginTop: 32,
-      paddingHorizontal: 24,
-    },
-    text: {
-      fontSize: 28,
-      fontFamily:'monospace',
-      alignSelf:'center',
-      color:"black",
-      marginTop:30,
-      marginBottom:30
-    },
-    parentcnt:{
   
-    }
-  
-  });
+  text: {
+    fontSize: 28,
+    fontFamily: 'monospace',
+    alignSelf: 'center',
+    color: "black",
+    marginTop: 30,
+    marginBottom: 30
+  },
+  parentcnt: {
+    // display:'flex',
+    fontFamily: 'monospace',
 
-  export default Homescreen
+  },
+
+});
+
+export default Homescreen

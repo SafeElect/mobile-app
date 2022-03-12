@@ -18,9 +18,9 @@ const App = () => {
   return (
     <View>
    
-     {/* <Waitscreen/> */}
+     <Waitscreen/>
     
-      <Homescreen />
+      {/* <Homescreen /> */}
      
      
       </View>
