@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, Animated } from 'react-native'
 import React from 'react'
 import FadeInView from '../components/fadeinview'
-import { VictoryPie } from "victory";
+import { VictoryPie, VictoryArea, VictoryStack, VictoryBar, VictoryStack } from "victory";
 
 const Analytics = () => {
   return (
