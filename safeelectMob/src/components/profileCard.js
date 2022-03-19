@@ -22,7 +22,7 @@ const ProfileCard = (props) =>{
      </View>
      
       </View>
-      <View style={{marginTop:30, marginLeft:-10}}>
+      <View style={{marginTop:39, marginLeft:-10}}>
         <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:26, marginLeft:-4}} >{props.rank}</Text>
          <Text style={{fontSize:10,   fontFamily:'monospace',}} >Ranking </Text>
         

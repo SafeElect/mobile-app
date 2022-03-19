@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
   
   text: {
     fontSize: 28,
-    fontFamily: 'monospace',
+    marginTop:10,
+    // fontFamily: 'monospace',
     alignSelf: 'center',
     color: "black",
     marginTop: 30,
@@ -33,7 +34,8 @@ const styles = StyleSheet.create({
   },
   parentcnt: {
     // display:'flex',
-    fontFamily: 'monospace',
+    // fontFamily: 'monospace',
+    marginTop:10
 
   },
 

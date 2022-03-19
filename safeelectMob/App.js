@@ -16,7 +16,7 @@ import Waitscreen from './src/screens/waitscreen';
 
 const App = () => {
   return (
-    <View>
+    <View style={{flex:1, display: "flex", flexDirection: "column"}}>
    
      <Waitscreen/>
     

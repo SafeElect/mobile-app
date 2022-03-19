@@ -4,11 +4,6 @@ import FadeInView from '../components/fadeinview'
 
 
 
-
-
-
-
-
 const Waitscreen = () => {
   return (
     <View style={styles.parent}>
@@ -37,26 +32,25 @@ const styles = StyleSheet.create({
       },
       heading1:{
 
-        fontSize:36,
+        fontSize:34,
         fontWeight:'bold',
         alignSelf:'center',
         paddingTop:30,
         color:"black",
-        fontFamily:'monospace',
-
-
+        marginTop:30
+        // fontFamily:'monospace',
       },
       heading2:{
           alignSelf:'center',
-          fontFamily:'monospace',
+          // fontFamily:'monospace',
           fontWeight:'bold',
           fontWeight:'100',
-          marginTop: 40,
+          marginTop: 49,
           marginBottom: 50
 
       },
       heading3:{
-        fontFamily:'monospace',
+        // fontFamily:'monospace',
         alignSelf:'center',
         color:"black"
 
