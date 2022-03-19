@@ -1,26 +1,23 @@
 
 import React from 'react';
 import {
-  Button,
-  SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
 import Homescreen from './src/screens/homescreen';
 import Waitscreen from './src/screens/waitscreen';
+import Analytics from './src/screens/analytics';
 
 
 const App = () => {
   return (
     <View style={{flex:1, display: "flex", flexDirection: "column"}}>
    
-     <Waitscreen/>
+     {/* <Waitscreen/> */}
     
-      {/* <Homescreen /> */}
+      <Homescreen />
+      {/* <Analytics/> */}
      
      
       </View>

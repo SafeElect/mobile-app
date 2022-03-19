@@ -8,13 +8,13 @@ const ProfileCard = (props) =>{
      <Image style={styles.profilePicture} source={{uri: props.uri}}/>
      <View style={{flexDirection:'row', marginTop:30, marginLeft:25 ,width:80 }}>
       <Text style={{fontSize:15, fontWeight:'bold', }}> {props.votes}</Text>
-      <Text style={{fontSize:10, marginTop:6, fontWeight:'bold', }}> Votes</Text>
+      <Text style={{fontSize:10, marginTop:3, fontWeight:'bold', }}> Votes</Text>
       </View>
      </View>
       
       <View style={{marginLeft:20}}>
-      <Text style={{marginTop:10, width:150, maxWidth:150, fontWeight:'bold', fontFamily: 'monospace',}}>{props.name}</Text>
-      <Text style={{marginTop:5 ,    fontFamily: 'monospace',}}>{props.position}</Text>
+      <Text style={{marginTop:10, width:150, maxWidth:150, fontWeight:'bold', }}>{props.name}</Text>
+      <Text style={{marginTop:5 ,   }}>{props.position}</Text>
       
      <View style={{flexDirection:'row', marginTop:55, marginLeft:25}}>
      <Text style={{fontWeight:'bold'}} >{props.percentageVote}</Text>
@@ -24,7 +24,7 @@ const ProfileCard = (props) =>{
       </View>
       <View style={{marginTop:39, marginLeft:-10}}>
         <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:26, marginLeft:-4}} >{props.rank}</Text>
-         <Text style={{fontSize:10,   fontFamily:'monospace',}} >Ranking </Text>
+         <Text style={{fontSize:10,   }} >Ranking </Text>
         
       </View>
 
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 28,
-    fontFamily: 'monospace',
+    // fontFamily: 'monospace',
     alignSelf: 'center',
     color: "black",
     marginTop: 30,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   parentcnt: {
     // display:'flex',
-    fontFamily: 'monospace',
+    // fontFamily: 'monospace',
 
   },
   profilePicture: {
