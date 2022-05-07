@@ -1,9 +1,20 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Button, Image } from 'react-native'
+import React, {  useState }  from 'react';
+import { StyleSheet, Text, View, ScrollView, Image, Pressable } from 'react-native'
+import CustomModal from './customModal';
 
 const ProfileCard = (props) =>{
+  const [modalVisible, setModalVisible] = useState(false);
         return (
-               <View style={{ height:150, maxWidth:'90%', marginLeft:17, borderRadius:23, marginVertical:25, flexDirection:'row',backgroundColor: 'rgba(85,0,102, 0.1)'}}> 
+            
+            <View style={{ height:150, maxWidth:'90%', marginLeft:17, borderRadius:23, marginVertical:25, flexDirection:'row',backgroundColor: 'rgba(85,0,102, 0.1)'}}> 
+   {/* This is the custom model with the stats, sending all the data as props */}
+   <CustomModal modalVisible={modalVisible} setModalVisible={setModalVisible} {...props} />
+      <Pressable
+          onPress={() => setModalVisible(true)}
+          style={{ height:150, maxWidth:'100%',  borderRadius:23, flexDirection:'row',backgroundColor: 'rgba(1,1,1,0)'}}
+        >
+     {/* everything here is the looks of the container */}
+     {/* everything passed through props... sends props to inner customModel to display the stats of the candidate */}
      <View>
      <Image style={styles.profilePicture} source={{uri: props.uri}}/>
      <View style={{flexDirection:'row', marginTop:30, marginLeft:25 ,width:80 }}>
@@ -28,7 +39,7 @@ const ProfileCard = (props) =>{
         
       </View>
 
-
+      </Pressable>
       </View>
         );
     }

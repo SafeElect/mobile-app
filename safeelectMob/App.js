@@ -15,10 +15,9 @@ const App = () => {
     <View style={{flex:1, display: "flex", flexDirection: "column"}}>
    
      {/* <Waitscreen/> */}
-    
+    {/* <StatsModal /> */}
       <Homescreen />
       {/* <Analytics/> */}
-     
      
       </View>
   )

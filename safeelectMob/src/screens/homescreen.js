@@ -14,9 +14,12 @@ const Homescreen = () => {
         <ProfileCard name="Abdullah"  position="President" rank="1" votes="2000" percentageVote="30%" uri='https://i.ibb.co/qYBDjcX/dp.jpg' />
         <ProfileCard name="Elon "  position="President" rank="2" votes="1500" percentageVote="29%" uri='https://i.ibb.co/mN5NCmy/elon.jpg' />
         <ProfileCard name="Simon "  position="President" rank="3" votes="1200" percentageVote="19%" uri='https://i.ibb.co/FXfG2px/Simon-Leviev-1-330x200.webp' />
+        <ProfileCard name="Simon "  position="President" rank="3" votes="1200" percentageVote="19%" uri='https://i.ibb.co/FXfG2px/Simon-Leviev-1-330x200.webp' />
 
 
-        <CustomButton title='Analytics'/>
+        <CustomButton title='Analyze' onPress={() => {
+    alert('Go to analytics screen');
+  }} />
       </ScrollView>
     </View>
 

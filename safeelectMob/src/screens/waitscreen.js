@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, Animated } from 'react-native'
 import React from 'react'
 import FadeInView from '../components/fadeinview'
+import CustomButton from '../components/customButton'
 
 
 
@@ -15,6 +16,10 @@ const Waitscreen = () => {
      <Text style={styles.heading3}>Please Check Later for the Result Announcement.</Text>
      </FadeInView>
     
+     <CustomButton margin={60} title='Check Results' onPress={() => {
+    alert('Go to analytics screen');
+  }} />
+      
 
     </View>
   )
@@ -42,9 +47,10 @@ const styles = StyleSheet.create({
       },
       heading2:{
           alignSelf:'center',
-          // fontFamily:'monospace',
+          fontFamily:'Arial',
           fontWeight:'bold',
-          fontWeight:'100',
+          fontWeight:'200',
+          fontSize:20,
           marginTop: 49,
           marginBottom: 50
 
@@ -52,7 +58,9 @@ const styles = StyleSheet.create({
       heading3:{
         // fontFamily:'monospace',
         alignSelf:'center',
-        color:"black"
+        color:"black",
+        fontSize:13,
+        marginBottom: 30
 
 
       },
