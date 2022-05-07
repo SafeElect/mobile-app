@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View,Image } from "react-native";
-
+import RingChart from "./ringChart";
 
 // this custom model is to show stats of the candidates
 const CustomModal = (props) => {
@@ -22,6 +22,7 @@ const CustomModal = (props) => {
 
             <Text style={styles.modalName}>{name}</Text>
             <Text style={styles.modalh2}>Voter Statistics</Text>
+            <RingChart />
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
@@ -66,7 +67,7 @@ const CustomModal = (props) => {
     buttonClose: {
       backgroundColor: "#9d4edd",
       alignSelf:'center',
-      marginTop:'150%'
+      marginTop:'50%'
     },
     textStyle: {
       color: "white",

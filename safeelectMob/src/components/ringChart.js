@@ -1,18 +1,16 @@
 import { View, Text, StyleSheet , TouchableOpacity} from 'react-native'
 import React from 'react'
+import {ProgressChart} from 'react-native-chart-kit'
 
- const RingChart = (props) => {
+const RingChart = (props) => {
+   
+    
+
+
+
   return (
-      <View style={{}}>
-          <ProgressChart
-  data={data}
-  width={screenWidth}
-  height={220}
-  strokeWidth={16}
-  radius={32}
-  chartConfig={chartConfig}
-  hideLegend={false}
-/>
+      <View >
+         
           
       </View>
   )
