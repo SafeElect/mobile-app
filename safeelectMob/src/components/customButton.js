@@ -3,7 +3,7 @@ import React from 'react'
 
  const CustomButton = (props) => {
   return (
-      <View style={{margin:props.margin}}>
+      <View style={{margin:props.margin, marginBottom:props.marginB}}>
                   <TouchableOpacity
         style={styles.btn}
         onPress={props.onPress}
