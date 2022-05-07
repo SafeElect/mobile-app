@@ -1,27 +1,33 @@
 
 import React from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   StatusBar,
   StyleSheet,
   View,
+  AsyncStorage
 } from 'react-native';
 import Homescreen from './src/screens/homescreen';
 import Waitscreen from './src/screens/waitscreen';
 import Analytics from './src/screens/analytics';
+import axios from 'axios'
+
 
 
 const App = () => {
-  return (
-    <View style={{flex:1, display: "flex", flexDirection: "column"}}>
-   
-     {/* <Waitscreen/> */}
-    {/* <StatsModal /> */}
-      <Homescreen />
-      {/* <Analytics/> */}
-     
-      </View>
-  )
+  const [isvoting, setIsvoting] = React.useState(true); 
+  const Stack = createNativeStackNavigator();
 
+  return isvoting ? (  <Waitscreen isvoting={isvoting} setIsvoting={setIsvoting}  />  ) : ( <NavigationContainer> 
+    
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Homescreen" component={Homescreen} />
+          <Stack.Screen name="Analytics" component={Analytics} />
+        </Stack.Navigator>
+  
+  </NavigationContainer> );
+ 
 }
 
 

@@ -3,7 +3,7 @@ import React from 'react'
 import ProfileCard from '../components/profileCard'
 import CustomButton from '../components/customButton'
 
-const Homescreen = () => {
+const Homescreen = ({ navigation }) => {
   return (
 
     <View style={styles.parentcnt}>
@@ -19,9 +19,7 @@ const Homescreen = () => {
 
         
       </ScrollView>
-      <CustomButton margin={20} title='Analyze' onPress={() => {
-    alert('Go to analytics screen');
-  }} />
+      <CustomButton margin={20} title='Analyze' onPress={() => navigation.navigate("Analytics")} />
     </View>
 
   )

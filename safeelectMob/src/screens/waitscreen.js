@@ -5,19 +5,24 @@ import CustomButton from '../components/customButton'
 
 
 
-const Waitscreen = () => {
+const Waitscreen = (props) => {
+  let {setIsvoting, isvoting, ...other} = props
+
+  const checkIsVoting = async () => {}
+
   return (
     <View style={styles.parent}>
         <Text style={styles.heading1}>Safe Elect</Text>
-        <FadeInView>
+        {/* <FadeInView> */}
      <Image style={styles.logo} source={require('../assets/phone.png')}/>
 
      <Text style={styles.heading2}>The Elections Are Not Over Yet!</Text>
      <Text style={styles.heading3}>Please Check Later for the Result Announcement.</Text>
-     </FadeInView>
+     {/* </FadeInView> */}
     
      <CustomButton margin={60} title='Check Results' onPress={() => {
-    alert('Go to analytics screen');
+    setIsvoting(!isvoting)
+    console.log(isvoting)
   }} />
       
 
