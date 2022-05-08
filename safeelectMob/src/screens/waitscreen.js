@@ -6,10 +6,14 @@ import CustomButton from '../components/customButton'
 
 
 const Waitscreen = (props) => {
-  let {setIsvoting, isvoting, ...other} = props
+  
+  let {setIsvoting, isvoting, apiCall, ...other} = props
 
-  const checkIsVoting = async () => {}
-
+  const checkVoting = (isvoting) => {
+    if(isvoting == 1){
+      alert('Voting is not over yet')
+    }
+  }
   return (
     <View style={styles.parent}>
         <Text style={styles.heading1}>Safe Elect</Text>
@@ -21,8 +25,9 @@ const Waitscreen = (props) => {
      {/* </FadeInView> */}
     
      <CustomButton margin={60} title='Check Results' onPress={() => {
-    setIsvoting(!isvoting)
-    console.log(isvoting)
+    setIsvoting(apiCall)
+    alert("Voting still under progress")
+   
   }} />
       
 

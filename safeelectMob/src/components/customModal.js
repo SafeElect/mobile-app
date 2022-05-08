@@ -22,7 +22,11 @@ const CustomModal = (props) => {
 
             <Text style={styles.modalName}>{name}</Text>
             <Text style={styles.modalh2}>Voter Statistics</Text>
-            <RingChart />
+            <RingChart props />
+
+
+
+
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
