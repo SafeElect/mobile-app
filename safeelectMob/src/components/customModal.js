@@ -82,7 +82,7 @@ const CustomModal = (props) => {
     },
     profilePicture:{
       height: 120,
-      width: 120,
+      width: 220,
       borderRadius: 60,
       marginTop: 50,
       alignSelf:"center"

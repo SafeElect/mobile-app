@@ -15,17 +15,12 @@ const Analytics = () => {
     // <KeyboardAwareScrollView >
     <View style={styles.container}>
        
-        <Text style={styles.heading1}>Safe Elect</Text>
-       
-      
-        <VictoryChart width={350} theme={VictoryTheme.material}   domainPadding={10}>
-          <VictoryBar style={{data:{fill:"purple"}}} data={data} x="candidate" y="votes" colorScale='green'/>
-        </VictoryChart>
+        <Text style={styles.heading1}>Voter Analysis</Text>
+
 
       
-      
         <Pressable
-              style={[styles.button, styles.buttonClose]}
+              style={{marginTop:300}}
               onPress={() => alert("back")}
             >
               <Text style={styles.textStyle}>Back</Text>
@@ -40,18 +35,18 @@ export default Analytics
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: "center",
+      // justifyContent: "center",
       alignItems: "center",
       backgroundColor: "#f5fcff",
     },
     heading1:{
 
-        fontSize:36,
+        fontSize:30,
         fontWeight:'bold',
         alignSelf:'center',
         // paddingTop:30,
         color:"black",
         // fontFamily:'monospace',
-        marginTop:-250
+        marginTop:70
       },
   });
