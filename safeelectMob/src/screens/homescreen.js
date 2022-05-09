@@ -37,7 +37,7 @@ const Homescreen = ({ navigation }) => {
 
       <ScrollView style={{ height: '85%', zIndex:1 }} >
         
-        {candidates.map( candidate => <ProfileCard key={candidate.nid} name={candidate.first} position={candidate.last} rank={candidate.pos} votes={candidate.voteCount} percentageVote={candidate.percentage} uri= {candidate.img} males={44} location={["Istanbul","Ankara","Izmir"]} locationPercentage={[15,36,42]} ageVotes={[14,21,22,43]} /> )}
+        {candidates.map( candidate => <ProfileCard key={candidate.nid} name={candidate.first} position={candidate.last} rank={candidate.pos} votes={candidate.voteCount} percentageVote={candidate.percentage} uri= {candidate.img} males={44} location={["Istanbul","Ankara","Izmir"]} locationPercentage={[15,36,42]} ageVotes={[50,21,22,43]} /> )}
         
       </ScrollView>
      

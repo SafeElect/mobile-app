@@ -20,7 +20,7 @@ const Graphs = props => {
         </Text>
         <VictoryPie
           data={[
-            {x: '16-30 y', y: 15},
+            {x: '18-30 y', y: 15},
             {x: '31-50 y', y: 12},
             {x: '51-60 y', y: 7},
             {x: '61+ y', y: 5},
@@ -29,7 +29,7 @@ const Graphs = props => {
           height={240}
           startAngle={90}
           endAngle={450}
-          cornerRadius={({datum}) => datum.y * 1.1}
+          cornerRadius={({datum}) => datum.y * 0.6}
           colorScale={['blue', 'orange', 'gold', 'purple']}
           categories={{x: ['dogs', 'cats', 'mice']}}
           animate={{
