@@ -29,7 +29,7 @@ const ProfileCard = (props) =>{
       
      <View style={{flexDirection:'row', marginTop:55, marginLeft:25}}>
      <Text style={{fontWeight:'bold'}} >{props.percentageVote}</Text>
-     <Text style={{fontSize:10, marginTop:3}}> votes</Text>
+     <Text style={{fontSize:10, marginTop:3}}> % votes</Text>
      </View>
      
       </View>

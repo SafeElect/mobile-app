@@ -19,12 +19,12 @@ const App = () => {
   const apiCall = async () => {
      instance.get('isvoting').then((res) => {
       console.log(res.data.data)
-      if(res.status == 200){
+      if(res.status == 200 || res.status == 304){
        if(res.data.data == 1){
        return(1)  // to lock to wait screen
       }
       else{
-        return (1) //anything else to proceed to see the data
+        return (2) //anything else to proceed to see the data
       }
     }
       else{
@@ -56,7 +56,6 @@ const App = () => {
   
  
 }
-
 
 const styles = StyleSheet.create({
   sectionContainer: {

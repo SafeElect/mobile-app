@@ -1,9 +1,23 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import ProfileCard from '../components/profileCard'
 import CustomButton from '../components/customButton'
+import instance from '../../axios'
 
 const Homescreen = ({ navigation }) => {
+
+  const [candidates, setCandidates] = useState([]);
+  useEffect(() => {
+    instance
+      .get(`/smob`)
+      // .then((res) => setCandidates(res.data.data))
+      .then((res) => {console.log(res.data.data)
+        setCandidates(res.data.data) })
+      .catch((err) => console.log(err));
+  }, []);
+
+
+
   return (
 
     <View style={styles.parentcnt}>
@@ -11,11 +25,13 @@ const Homescreen = ({ navigation }) => {
         Results
       </Text>
       <ScrollView style={{ height: '85%' }} >
-        <ProfileCard name="Team 1"  position="Mithril" rank="1" votes="2000" percentageVote="30%" uri= "https://i.ibb.co/f9FfCSh/Team1.jpg" />
+        {/* <ProfileCard name="Team 1"  position="Mithril" rank="1" votes="2000" percentageVote="30%" uri= "https://i.ibb.co/f9FfCSh/Team1.jpg" />
         <ProfileCard name="Team 2  "  position="SafeElect" rank="2" votes="1500" percentageVote="29%" uri="https://i.ibb.co/wR9PXb4/Team12.jpg" />
         <ProfileCard name="Simon "  position="President" rank="3" votes="1200" percentageVote="19%" uri="https://i.ibb.co/zr9fPMg/Team3.jpg" />
-        <ProfileCard name="Simon "  position="President" rank="3" votes="1200" percentageVote="19%" uri='https://i.ibb.co/FXfG2px/Simon-Leviev-1-330x200.webp' />
+        <ProfileCard name="Simon "  position="President" rank="3" votes="1200" percentageVote="19%" uri='https://i.ibb.co/FXfG2px/Simon-Leviev-1-330x200.webp' /> */}
 
+        {candidates.map( candidate => <ProfileCard key={candidate.nid} name={candidate.first} position={candidate.last} rank={candidate.pos} votes={candidate.voteCount} percentageVote={candidate.percentage} uri= {candidate.img} /> )}
+        
       </ScrollView>
       {/* <CustomButton margin={20} title='Analyze' onPress={() => navigation.navigate("Analytics")} /> */}
     </View>
