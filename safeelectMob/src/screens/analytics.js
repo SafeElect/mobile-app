@@ -1,22 +1,24 @@
 import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native'
 import React from 'react'
-import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie } from "victory-native";
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie, VictoryArea, VictoryPolarAxis } from "victory-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-const data = [
-    { candidate: "Elon", votes: 13000 },
-    { candidate: "Abdullah", votes: 16500 },
-    { candidate: "Talal", votes: 14250 },
-    { candidate: "Mehmet", votes: 19000 }
-  ];
 
 const Analytics = () => {
   return (
-    // <KeyboardAwareScrollView >
     <View style={styles.container}>
        
         <Text style={styles.heading1}>Voter Analysis</Text>
-
+       
+          <VictoryPie data={[
+  { x: "16-30", y: 15 },
+  { x: "31-50", y: 12},
+  { x: "51-60", y: 7 },
+  { x: "61+", y: 5 }
+]}
+    width={400} height={400}   startAngle={90}
+  endAngle={450} cornerRadius={({ datum }) => datum.y * 1.1} colorScale={["blue", "orange", "gold", "purple" ]} categories={{ x: ["dogs", "cats", "mice"] }} animate={{
+  duration: 5000}} theme={VictoryTheme.material}  /> 
 
       
         <Pressable
@@ -26,7 +28,7 @@ const Analytics = () => {
               <Text style={styles.textStyle}>Back</Text>
             </Pressable>
     </View>
-    // </KeyboardAwareScrollView>
+   
   )
 }
 

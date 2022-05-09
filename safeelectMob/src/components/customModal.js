@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View,Image } from "react-native";
+import { Alert, Modal, StyleSheet, Text, Pressable, View,Image , ScrollView} from "react-native";
 import RingChart from "./ringChart";
 
 // this custom model is to show stats of the candidates
@@ -14,19 +14,20 @@ const CustomModal = (props) => {
           setModalVisible(!modalVisible);
         }}
       >
+        
         <View style={styles.centeredView}>
+        
           <View style={styles.modalView}>
+          <Text style={styles.modalh2}>Voter Statistics </Text>
           <Image style={styles.profilePicture} source={{uri:uri}}/>
 
 
 
             <Text style={styles.modalName}>{name}</Text>
-            <Text style={styles.modalh2}>Voter Statistics</Text>
+           
+            <ScrollView style={{ height: '85%', width:'120%'}} >
             <RingChart props />
-
-
-
-
+            </ScrollView >
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
@@ -35,6 +36,7 @@ const CustomModal = (props) => {
             </Pressable>
           </View>
         </View>
+        
       </Modal>
     )
   } 
@@ -71,7 +73,7 @@ const CustomModal = (props) => {
     buttonClose: {
       backgroundColor: "#9d4edd",
       alignSelf:'center',
-      marginTop:'50%'
+      marginTop:'10%'
     },
     textStyle: {
       color: "white",
@@ -88,14 +90,14 @@ const CustomModal = (props) => {
       height: 120,
       width: 220,
       borderRadius: 60,
-      marginTop: 50,
+      marginTop: 30,
       alignSelf:"center"
 
     },
     modalh2:{
       marginTop: 15,
       textAlign: "center",
-      fontSize: 15
+      fontSize: 25,
     }
   });
 

@@ -12,6 +12,7 @@ import Homescreen from './src/screens/homescreen';
 import Waitscreen from './src/screens/waitscreen';
 // import Analytics from './src/screens/analytics';
 import axios from 'axios'
+import Analytics from './src/screens/analytics';
 
 
 
@@ -44,7 +45,7 @@ const App = () => {
     
       <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Homescreen" component={Homescreen} />
-            {/* <Stack.Screen name="Analytics" component={Analytics} /> */}
+            <Stack.Screen name="Analytics" component={Analytics} />
           </Stack.Navigator>
     
     </NavigationContainer> );
