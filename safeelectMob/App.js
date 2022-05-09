@@ -18,7 +18,7 @@ const App = () => {
   // const URL = 'http://localhost:8080/isvoting'
   const apiCall = async () => {
      instance.get('isvoting').then((res) => {
-      console.log(res.data.data)
+      console.log(res.data)
       if(res.status == 200 || res.status == 304){
        if(res.data.data == 1){
        return(1)  // to lock to wait screen

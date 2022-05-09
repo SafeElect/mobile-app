@@ -3,8 +3,12 @@ import React, {useEffect, useState} from 'react'
 import ProfileCard from '../components/profileCard'
 import CustomButton from '../components/customButton'
 import instance from '../../axios'
+import  Loading  from '../components/loading'
 
 const Homescreen = ({ navigation }) => {
+
+
+  const [loading, setLoading] = useState(true);
 
   const [candidates, setCandidates] = useState([]);
   useEffect(() => {
@@ -12,13 +16,15 @@ const Homescreen = ({ navigation }) => {
       .get(`/smob`)
       // .then((res) => setCandidates(res.data.data))
       .then((res) => {console.log(res.data.data)
+        setLoading(false);
         setCandidates(res.data.data) })
+        
       .catch((err) => console.log(err));
   }, []);
 
 
 
-  return (
+  return loading ? (<Loading />) : (
 
     <View style={styles.parentcnt}>
       {/* <ImageBackground source={require('../assets/phone.png')} resizeMode="cover" style={styles.image}> */}

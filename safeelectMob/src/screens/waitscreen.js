@@ -27,11 +27,7 @@ const Waitscreen = (props) => {
      <CustomButton margin={60} title='Refresh Results' onPress={() => {
     
     apiCall == 1 ?  checkVoting : setIsvoting(apiCall)
-    
-   
   }} />
-      
-
     </View>
   )
 }
