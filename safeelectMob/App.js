@@ -10,19 +10,23 @@ import {
 } from 'react-native';
 import Homescreen from './src/screens/homescreen';
 import Waitscreen from './src/screens/waitscreen';
-import axios from 'axios'
-
+import instance from './axios';
 
 
 
 const App = () => {
-  const URL = 'http://localhost:8080/isvoting'
+  // const URL = 'http://localhost:8080/isvoting'
   const apiCall = async () => {
-     axios.get(URL).then((res) => {
+     instance.get('isvoting').then((res) => {
       console.log(res.data.data)
       if(res.status == 200){
-       return(1)  
+       if(res.data.data == 1){
+       return(1)  // to lock to wait screen
       }
+      else{
+        return (1) //anything else to proceed to see the data
+      }
+    }
       else{
         alert("Error")  
       }

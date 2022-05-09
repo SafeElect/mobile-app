@@ -24,9 +24,10 @@ const Waitscreen = (props) => {
      <Text style={styles.heading3}>Please Check Later for the Result Announcement.</Text>
      {/* </FadeInView> */}
     
-     <CustomButton margin={60} title='Check Results' onPress={() => {
-    setIsvoting(apiCall)
-    alert("Voting still under progress")
+     <CustomButton margin={60} title='Refresh Results' onPress={() => {
+    
+    apiCall == 1 ? alert("Voting still under progress") : setIsvoting(apiCall)
+    
    
   }} />
       
