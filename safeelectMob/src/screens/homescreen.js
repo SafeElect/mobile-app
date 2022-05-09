@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, ImageBackground } from 'react-native'
 import React, {useEffect, useState} from 'react'
 import ProfileCard from '../components/profileCard'
 import CustomButton from '../components/customButton'
@@ -21,14 +21,20 @@ const Homescreen = ({ navigation }) => {
   return (
 
     <View style={styles.parentcnt}>
+      {/* <ImageBackground source={require('../assets/phone.png')} resizeMode="cover" style={styles.image}> */}
+     
       <Text style={styles.text} >
         Results
       </Text>
-      <ScrollView style={{ height: '85%' }} >
+      {/* </ImageBackground> */}
+
+
+      <ScrollView style={{ height: '85%', zIndex:1 }} >
         
-        {candidates.map( candidate => <ProfileCard key={candidate.nid} name={candidate.first} position={candidate.last} rank={candidate.pos} votes={candidate.voteCount} percentageVote={candidate.percentage} uri= {candidate.img} /> )}
+        {candidates.map( candidate => <ProfileCard key={candidate.nid} name={candidate.first} position={candidate.last} rank={candidate.pos} votes={candidate.voteCount} percentageVote={candidate.percentage} uri= {candidate.img} males={44} location={["Istanbul","Ankara","Izmir"]} locationPercentage={[15,36,42]} ageVotes={[14,21,22,43]} /> )}
         
       </ScrollView>
+     
       {/* <CustomButton margin={20} title='Analyze' onPress={() => navigation.navigate("Analytics")} /> */}
     </View>
 

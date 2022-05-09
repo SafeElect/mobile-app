@@ -1,10 +1,10 @@
 import React from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View,Image , ScrollView} from "react-native";
-import RingChart from "./ringChart";
+import Graphs from "./graphs";
 
 // this custom model is to show stats of the candidates
 const CustomModal = (props) => {
-  let {modalVisible, setModalVisible, name, uri, ...other} = props //{props.modalVisible, props.setModalVisible}
+  let {modalVisible, setModalVisible, name, uri, location, males, ageVotes,locationPercentage, ...other} = props //{props.modalVisible, props.setModalVisible}
     return (
         <Modal
         animationType="fade"
@@ -25,8 +25,8 @@ const CustomModal = (props) => {
 
             <Text style={styles.modalName}>{name}</Text>
            
-            <ScrollView style={{ height: '85%', width:'120%'}} >
-            <RingChart props />
+            <ScrollView style={{ height: '80%', width:'120%'}} >
+            <Graphs locationPercentage={locationPercentage} location={location} males={males} ageVotes={ageVotes} />
             </ScrollView >
             <Pressable
               style={[styles.button, styles.buttonClose]}
@@ -73,12 +73,14 @@ const CustomModal = (props) => {
     buttonClose: {
       backgroundColor: "#9d4edd",
       alignSelf:'center',
-      marginTop:'10%'
+      marginTop:5,
+      paddingBottom:5,
     },
     textStyle: {
       color: "white",
       fontWeight: "bold",
-      textAlign: "center"
+      textAlign: "center",
+      marginBottom:5
     },
     modalName: {
       marginTop: 20,

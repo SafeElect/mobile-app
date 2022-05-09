@@ -26,7 +26,7 @@ const Waitscreen = (props) => {
     
      <CustomButton margin={60} title='Refresh Results' onPress={() => {
     
-    apiCall == 1 ? alert("Voting still under progress") : setIsvoting(apiCall)
+    apiCall == 1 ?  checkVoting : setIsvoting(apiCall)
     
    
   }} />
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         width: 350,
         height: 250,
         marginTop:30,
-
+        marginLeft:19,
       },
       heading1:{
 
