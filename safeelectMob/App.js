@@ -16,43 +16,38 @@ import instance from './axios';
 
 const App = () => {
   // const URL = 'http://localhost:8080/isvoting'
-  const apiCall = async () => {
-     instance.get('isvoting').then((res) => {
-      console.log(res.data)
-      if(res.status == 200 || res.status == 304){
-       if(res.data.data == 1){
-       return(1)  // to lock to wait screen
-      }
-      else{
-        return (2) //anything else to proceed to see the data
-      }
-    }
-      else{
-        alert("Error")  
-      }
-     }).catch((err) => {
-        alert(err)
-     })
+  // const apiCall = async () => {
+  //    instance.get('isvoting').then((res) => {
+  //     console.log(res.data.data)
+  //     if(res.status == 200 || res.status == 304){
+  //      if(res.data.data == 1){
+  //      return(1)  // to lock to wait screen
+  //     }
+  //     else{
+  //       return (0) //anything else to proceed to see the data
+  //     }
+  //   }
+  //     else{
+  //       alert("Error")  
+  //     }
+  //    }).catch((err) => {
+  //       alert(err)
+  //    })
     
-  }
-  const [isvoting, setIsvoting] = useState(1); 
+  // }
   const Stack = createNativeStackNavigator();
 
-  if (isvoting == 1) {
-    console.log(isvoting)
-    return (  <Waitscreen isvoting={isvoting} setIsvoting={setIsvoting}  />  )
-  }
-  else{
-    console.log(isvoting)
+  
     return ( <NavigationContainer> 
     
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Waitscreen" component={Waitscreen} />
             <Stack.Screen name="Homescreen" component={Homescreen} />
-            {/* <Stack.Screen name="Analytics" component={Analytics} /> */}
+            
           </Stack.Navigator>
     
     </NavigationContainer> );
-  }
+  
   
  
 }
