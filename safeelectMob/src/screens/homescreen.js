@@ -65,7 +65,7 @@ const Homescreen = ({navigation}) => {
             votes={candidate.voteCount}
             percentageVote={candidate.percentage}
             uri={candidate.img}
-            data2={candidates2[candidate.nid]}
+            data2={candidates2[candidate.nid-1]}
             // males={44}
             // location={candidates2[1].data.location}
             // locationPercentage={[15, 36, 42]}
